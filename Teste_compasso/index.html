@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+       
+        <title>Teste Compasso</title>
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            //alert("teste");
+            $("#filtro_nome").keydown(function(){
+                $(".filtro").each(function(){
+                    var NomeTr = $(this).text().toLocaleLowerCase();
+                    var filtroNome = $("#filtro_nome").val().toLocaleLowerCase();
+                    if (NomeTr.includes(filtroNome)){
+                        $(this).show();
+                        console.log(NomeTr);
+                        } else {
+                     $(this).hide();
+                        }
+    });
+  });
+  $("#filtro_extensao").keydown(function(){
+    $(".filtro").each(function(){
+                    var extensaoTr = $(this).text().toLocaleLowerCase();
+                    var filtroextensao = $("#filtro_extensao").val().toLocaleLowerCase();
+                    if (extensaoTr.includes(filtroextensao)){
+                        $(this).show();
+                        console.log(extensaoTr);
+                        } else {
+                     $(this).hide();
+                        }
+    });
+  });
+  $("#filtro_diretorio").keydown(function(){
+    $(".filtro").each(function(){
+                    var diretorioTr = $(this).text().toLocaleLowerCase();
+                    var filtrodiretorio = $("#filtro_diretorio").val().toLocaleLowerCase();
+                    if (diretorioTr.includes(filtrodiretorio)){
+                        $(this).show();
+                        console.log(diretorioTr);
+                        } else {
+                     $(this).hide();
+                        }
+    });
+  });
+          });
+         </script>
+    </head>
+<body>
+
+<table>
+<tr>
+<th>  Nome </th>
+<th>  Extensão </th>
+<th>  Diretório </th>
+</tr>
+<tr>
+    <th>  <input type="text" id="filtro_nome" name="filtro_nome"><br><br> </th>
+    <th>  <input type="text" id="filtro_extensao" name="filtro_extensao"><br><br> </th>
+    <th>  <input type="text" id="filtro_diretorio" name="filtro_diretorio"><br><br> </th>
+    </tr>
+</table>
+
+    <h2>Lista de Arquivos</h2>
+
+    <table>
+      <tr>
+        <th>Nome</th>
+        <th>Extensão</th>
+        <th>Diretório</th>
+      </tr>
+      <tr class="filtro">
+        <td class="arquivo">Arquivo 1</td>
+        <td class="extensao">.txt</td>
+        <td class="diretorio">/arquivos_1</td>
+      </tr>
+      <tr class="filtro">
+        <td class="arquivo">Arquivo 2</td>
+        <td class="extensao">.jpg</td>
+        <td class="diretorio">/arquivos_2</td>
+      </tr>
+      <tr class="filtro">
+        <td class="arquivo">Arquivo 3</td>
+        <td class="extensao">.png</td>
+        <td class="diretorio">/arquivos_2</td>
+      </tr>
+      <tr class="filtro">
+        <td class="arquivo">Arquivo 4</td>
+        <td class="extensao">.txt</td>
+        <td class="diretorio">/arquivos_1</td>
+      </tr>
+
+</table>
+</body>
+</html>
